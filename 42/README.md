@@ -1,53 +1,53 @@
-#Item42 ÁË½âtypenameµÄË«ÖØÒâÒå
+#Item42 äº†è§£typenameçš„åŒé‡æ„ä¹‰
 
-## Q&A ÔÚtemplate<>Ä£°åÉùÃ÷Ê½ÖĞ£¬classºÍtypenameÓĞÉùÃ÷²»Í¬£¿
-## Ã»ÓĞ²»Í¬£¬ÍêÈ«ÏàÍ¬(¿Ï¶¨~o~£¡)
+## Q&A åœ¨template<>æ¨¡æ¿å£°æ˜å¼ä¸­ï¼Œclasså’Œtypenameæœ‰å£°æ˜ä¸åŒï¼Ÿ
+## æ²¡æœ‰ä¸åŒï¼Œå®Œå…¨ç›¸åŒ(è‚¯å®šï¼)
 
 ```c
 template<typename T>
 void doPorcessing(T& w) {
   int x;
   if (w.size() > 0) {
-    //T::const_iterator iter(w.begin()); //±àÒë±¨´í£¬±»µ±³É·ÇÀàĞÍ
+    //T::const_iterator iter(w.begin()); //ç¼–è¯‘æŠ¥é”™ï¼Œè¢«å½“æˆéç±»å‹
     T::const_iterator * x;
-    //ÕıÈ·µÄ¶¨Òå
+    //æ­£ç¡®çš„å®šä¹‰
     typename T::const_iterator iter(w.begin());
     ...
   }
 }
 ```
 
-ÉÏÃæµÄT::const_iteratorÊÇÒ»¸öÃû³Æ£¬ÎÒÃÇÏ£ÍûËüÓ¦¸ÃÊÇÒ»¸ö<b>Ç¶Ì×´ÓÊôÀàĞÍÃû³Æ</b>
+ä¸Šé¢çš„T::const_iteratoræ˜¯ä¸€ä¸ªåç§°ï¼Œæˆ‘ä»¬å¸Œæœ›å®ƒåº”è¯¥æ˜¯ä¸€ä¸ª<b>åµŒå¥—ä»å±ç±»å‹åç§°</b>
 
-- ´ÓÊô: ÆäÒÀÀµÓÚÄ£°å²ÎÊıT
-- Ç¶Ì×: ÆäÔÚCµÄÃüÃû¿Õ¼ä»ò¾²Ì¬³ÉÔ±£¬·½·¨ÄÚ
-- ÀàĞÍ: ÎÒÃÇÏ£ÍûËü±»µ±×÷ÀàĞÍÖ¸Ê¾·û(?)
+- ä»å±: å…¶ä¾èµ–äºæ¨¡æ¿å‚æ•°T
+- åµŒå¥—: å…¶åœ¨Cçš„å‘½åç©ºé—´æˆ–é™æ€æˆå‘˜ï¼Œæ–¹æ³•å†…
+- ç±»å‹: æˆ‘ä»¬å¸Œæœ›å®ƒè¢«å½“ä½œç±»å‹æŒ‡ç¤ºç¬¦
 
-Ç¶Ì×´ÓÊôÀàĞÍÃû³Æ¿ÉÄÜµ¼ÖÂ½âÎöÀ§ÄÑ£¬ÊÔÏë£¬ÔÚÄ£°åÊ¾Àı»¯µÄ¹ı³ÌÖĞ£¬
-TÖĞÒ»¸östatic³ÉÔ±Ç¡ÇÉ½Ğconst_iterator£¬ÄÇÃ´¶ÔÓÚT::const_iterator * x£¬
-µ½µ×ÊÇÉùÃ÷Ò»¸öT::const_iterator*ÀàĞÍ£¬»¹ÊÇÒ»¸öÏà³Ë±í´ïÊ½ÄØ£¬C++ÓĞ¸öÄ¬ÈÏ¹æÔò
-À´½âÊÍÕâ¸öÆçÒå×´Ì¬£º<b>Ëü¼ÙÉè´ËÃû³Æ²»ÊÇÀàĞÍ£¬³ı·ÇÄã¸æËßËüÊÇ</b>
-ÕâÒ²ÊÇÉÏÃæ±àÒë±¨´íµÄÔ­Òò
+åµŒå¥—ä»å±ç±»å‹åç§°å¯èƒ½å¯¼è‡´è§£æå›°éš¾ï¼Œè¯•æƒ³ï¼Œåœ¨æ¨¡æ¿ç¤ºä¾‹åŒ–çš„è¿‡ç¨‹ä¸­ï¼Œ
+Tä¸­ä¸€ä¸ªstaticæˆå‘˜æ°å·§å«const_iteratorï¼Œé‚£ä¹ˆå¯¹äºT::const_iterator * xï¼Œ
+åˆ°åº•æ˜¯å£°æ˜ä¸€ä¸ªT::const_iterator*ç±»å‹ï¼Œè¿˜æ˜¯ä¸€ä¸ªç›¸ä¹˜è¡¨è¾¾å¼å‘¢ï¼ŒC++æœ‰ä¸ªé»˜è®¤è§„åˆ™
+æ¥è§£é‡Šè¿™ä¸ªæ­§ä¹‰çŠ¶æ€ï¼š<b>å®ƒå‡è®¾æ­¤åç§°ä¸æ˜¯ç±»å‹ï¼Œé™¤éä½ å‘Šè¯‰å®ƒæ˜¯</b>
+è¿™ä¹Ÿæ˜¯ä¸Šé¢ç¼–è¯‘æŠ¥é”™çš„åŸå› 
 
-#### typenameÖ»±»ÓÃÀ´ÑéÃ÷Ç¶Ì×´ÓÊôÀàĞÍÃû³Æ
+#### typenameåªè¢«ç”¨æ¥éªŒæ˜åµŒå¥—ä»å±ç±»å‹åç§°
 ```c
 template<typename T>
 void f(const T& tank,
-	   typename T::iterator iter);  //±ØĞëÊ¹ÓÃtypename
+	   typename T::iterator iter);  //å¿…é¡»ä½¿ç”¨typename
 
-class Derived : public Base<T>::Nested { //Àà¼Ì³ĞÁĞ±í²»ÔÊĞíÊ¹ÓÃtypename
+class Derived : public Base<T>::Nested { //ç±»ç»§æ‰¿åˆ—è¡¨ä¸å…è®¸ä½¿ç”¨typename
  public:
   explicit Derived(int x):
-  Base<T>::Nested(x) {   //³ÉÔ±³õÊ¼»¯ÁĞ±í²»ÔÊĞíÊ¹ÓÃtypename
-    typename Base<T>::Nested temp; //²»ÔÚ»ùÀà¼Ì³ĞÁĞ±í£¬Ò²²»ÔÚ³ÉÔ±³õÊ¼»¯ÁĞ±íµÄÀàĞÍÃû£¬ĞèÒªÊ¹ÓÃtypename
+  Base<T>::Nested(x) {   //æˆå‘˜åˆå§‹åŒ–åˆ—è¡¨ä¸å…è®¸ä½¿ç”¨typename
+    typename Base<T>::Nested temp; //ä¸åœ¨åŸºç±»ç»§æ‰¿åˆ—è¡¨ï¼Œä¹Ÿä¸åœ¨æˆå‘˜åˆå§‹åŒ–åˆ—è¡¨çš„ç±»å‹åï¼Œéœ€è¦ä½¿ç”¨typename
   }
 };
 
 template<typename IterT>
 void workWithIterator(IterT iter) {
-//std::iterator_traits<IterT>::value_typeÊÇÒ»¸öÀàĞÍÎªIterTÖ®¶ÔÏóËùÖ¸Ö®ÎïµÄÀàĞÍ
+//std::iterator_traits<IterT>::value_typeæ˜¯ä¸€ä¸ªç±»å‹ä¸ºIterTä¹‹å¯¹è±¡æ‰€æŒ‡ä¹‹ç‰©çš„ç±»å‹
   typedef typename std::iterator_traits<IterT>::value_type val_type;
-  val_type temp(*iter); //Èç¹ûÄ£°å²ÎÊıIterTÎªstring, tempÀàĞÍ¼´Îªstring
+  val_type temp(*iter); //å¦‚æœæ¨¡æ¿å‚æ•°IterTä¸ºstring, tempç±»å‹å³ä¸ºstring
   
   
 }
