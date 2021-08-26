@@ -1,4 +1,4 @@
-#Item42 了解typename的双重意义
+# Item42 了解typename的双重意义
 
 ## Q&A 在template<>模板声明式中，class和typename有声明不同？
 ## 没有不同，完全相同(肯定！)
@@ -26,7 +26,7 @@ void doPorcessing(T& w) {
 嵌套从属类型名称可能导致解析困难，试想，在模板示例化的过程中，
 T中一个static成员恰巧叫const_iterator，那么对于T::const_iterator * x，
 到底是声明一个T::const_iterator*类型，还是一个相乘表达式呢，C++有个默认规则
-来解释这个歧义状态：<b>它假设此名称不是类型，除非你告诉它是</b>
+来解释这个歧义状态：<b>它假设此名称不是类型，除非你明确告诉它是</b>
 这也是上面编译报错的原因
 
 #### typename只被用来验明嵌套从属类型名称
